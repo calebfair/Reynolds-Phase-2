@@ -1,0 +1,168 @@
+
+
+
+// Header section text formatting
+header p {
+	margin: .5rem 0;
+	font-size: .8rem;
+	@include center;
+	@extend .header-text;
+	@media only screen and (max-width: $smallScreen) {
+		font-size: .9rem;
+		line-height: 20px;
+	}
+}
+header a {
+	color: $codGray;
+	font-style: none;
+	text-decoration: none;
+	@extend .header-text;
+}
+.header-text {
+	@media screen and (max-width: $mediumScreen) {
+		margin: 0;
+		color: $white;
+	}
+}
+
+
+// Option Formatting - Landing Section
+.option {
+	font-size: $small;
+	font-family: 'Slabo 27px', sans-serif;
+	color: $white;
+	@include center;
+	margin: 0;
+}
+.option-price {
+	font-size: $medium;
+	@media screen and (max-width: $mediumScreen) {
+		font-size: 8vw;
+	}
+}
+
+/* Honda Exclusive Packages Styling */
+.honda-packages .section-header {
+	margin: 0;
+	padding: 100px 0 50px 0;
+	font-weight: bold;
+	color: rgb(0,153,51);
+	font-size: $large;
+}
+.honda-packages .italics {
+	font-style:italic;
+	font-size: 10px;
+	margin: 1rem calc(5% + 2rem);
+	margin-bottom: 0;
+}
+
+// Table text formatting
+tr:nth-child(n+3) p, tr:nth-child(n+3) li  {
+	color: $tundora;
+}
+th .option {
+	color: $black;
+	font-size: $small;
+	@media only screen and (max-width: $largeScreen) {
+		font-size: 1rem
+	}
+}
+th .option-price {
+	font-size: $medium;
+	@media only screen and (max-width: $largeScreen) {
+		font-size: $medium;
+	}
+}
+
+.honda-packages-mobile {
+	.package-table {
+		font-size: 3vw;
+		p, ul {
+			margin: 0;
+			padding: 1.25vw 5vw;
+		}
+		ul {
+			padding: 1.25vw 5vw .75vw 10vw;
+		}
+		.has-more-info {
+			ul {
+				padding: 1.25vw 5vw .25vw 10vw;
+			}
+		}
+		.italics {
+			padding: 0 5vw .75vw 11vw;
+			font-size: 3vw;
+		}
+	}
+	.package-header {
+		font-size: 3vw;
+	}
+}
+
+// Mobile Honda Packages text
+.package-description {
+	@media screen and (max-width: $mediumScreen) {
+		background-color: rgb(57,109,146);
+		margin-top: 4px;
+		height: 10vw;
+	}
+	h4 {
+		@media screen and (max-width: $mediumScreen) {
+			@include displayInline;
+			line-height: 8vw;
+			font-size: 5vw;
+			font-weight: bold;
+			max-height: 8vw;
+			padding-bottom: 2vw;
+			padding-left: 5%;
+		}
+	}
+	.option-price {
+		max-height: 8vw;
+	}
+}
+
+
+// Next Steps font formatting
+.next-steps .section-header {
+	margin: 0;
+	color: rgb(136,204,0);
+	text-align: left;
+	font-size: 20px;
+}
+.next-steps p, .next-steps a {
+	color: $white;
+	font-size: 14px;
+}
+.next-steps a {
+	text-decoration: none;
+	font-style: none;
+}
+// Form font formatting
+input::placeholder, textarea {
+	color: rgb(125,125,125);
+	font-style: italic;
+	@media screen and (max-width: $mediumScreen) {
+		font-size: .85rem;
+	}
+}
+input:required::placeholder {
+	font-weight: bold;
+}
+
+// Footer paragraph formatting
+footer p {
+	@include center;
+	color: $white;
+	font-size: 10px;
+	vertical-align: middle;
+	margin: 0;
+	line-height: 100px;
+	@media screen and (max-width: $mediumScreen) {
+		line-height: 1.5;
+		font-size: 2vw;
+	}
+	@media only screen and (max-width: $smallScreen) {
+		font-size: 3vw;
+	}
+}

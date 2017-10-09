@@ -1,0 +1,10 @@
+/* Form Styling */
+input, textarea {
+	display: block;
+	width: calc(100% - 20px);
+	margin: 15px 0;
+	padding: 10px;
+	background-color: rgb(35,35,35);
+	color: white;
+	border: none;
+}

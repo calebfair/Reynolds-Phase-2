@@ -1,0 +1,39 @@
+footer {
+	width: 90%;
+	padding: 0 5%;
+	height: 150px;
+	background-color: $black;
+	@media screen and (max-width: $mediumScreen){
+		width: 100%;
+		padding: 0;
+		height: auto;
+		background-color: rgb(33,35,34);
+	}
+}
+
+/* Formatting of Footer Divs */
+.fourty-width {
+	width: 49%;
+	@extend .footer-divs;
+}
+.twenty-width {
+	width: 25%;
+	@extend .footer-divs;
+}
+
+.footer-divs {
+	display: inline-block;
+	height: 100px;
+	padding: 25px 0;
+	vertical-align: top;
+	@media screen and (max-width: $mediumScreen) {
+		width: 80%;
+		height: 5vh;
+		padding: 2.5vh 10%;
+	}
+}
+.desktop-footer {
+	@media screen and (max-width: $mediumScreen) {
+		@include displayNone;
+	}
+}

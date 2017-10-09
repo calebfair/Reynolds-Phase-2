@@ -1,0 +1,356 @@
+
+
+// Landing Section
+.landing-section {
+	height: 90vh;
+	max-height: 1036px;
+	background: linear-gradient(rgba($white, .9) 0%, rgba($white, 0) 60%), url('../Images/hero.jpg') center no-repeat, rgb(142,102,165);
+	background-size: cover;
+	padding: 0 10%;
+	width: 80%;
+	color: $codGray;
+	@media screen and (max-width: $mediumScreen) {
+		padding: 0;
+		width: 100%;
+		height: 75vh;
+		overflow: hidden;
+		position: relative;
+	}
+}
+
+#landing-header h1 {
+	font-size: 2.5rem;
+	text-align: left;
+}
+#landing-header {
+	width: 55%;
+	padding: 7vh 37.5% 20vh 12.5%;
+	@media screen and (max-width: $mediumScreen) {
+		width: 80%;
+		padding: 40vh 10% 0 10%;
+	}
+	.section-header {
+		@media screen and (max-width: $mediumScreen) {
+			font-size: 7.75vw;
+			@include center;
+			color: $white;
+		}
+	}
+}
+#option-container {
+	position: absolute;
+	top: 65vh;
+	width: 80%;
+	@include center;
+	@media only screen and (max-width: $largeScreen) {
+		width: 65%;
+		margin-left: 7.5%;
+	}
+	@media screen and (max-width: $mediumScreen) {
+		@include displayNone;
+	}
+}
+
+// Why Naked Lime Section
+.why-naked-lime {
+	@include imageCentered('../Images/brushed_steel.png');
+	padding: 0 10%;
+	width: 80%;
+	@media screen and (max-width: $mediumScreen) {
+		@include displayNone;
+	}
+}
+.why-naked-lime .section-header {
+	padding: 50px 0 0 0;
+	margin: 0 0 50px 0;
+	color: $white;
+	font-weight: bold;
+	font-size: 1.75rem;
+}
+.why-naked-lime .container-p {
+	padding: 0 5% 60px 5%;
+	margin: 60px 0 0 0;
+	width: 90%;
+	color: $codGray;
+}
+.why-naked-lime p {
+	line-height: 2;
+}
+
+// Honda Packages Div spacing and formatting
+.container-has-margins {
+	margin: 0 7.5%;
+	background-color: $white;
+	padding-bottom: 75px;
+}
+
+/* Styling of Honda Packages section for mobile */
+/* Replaces option listing in Landing section and table */
+.honda-packages-mobile {
+	@media screen and (max-width: $mediumScreen) {
+		height: auto;
+		overflow: hidden;
+		position: relative;
+	}
+	.header {
+		@media screen and (max-width: $mediumScreen) {
+			margin: 8vh 0 5vh 0;
+		}
+	}
+	.honda-headers {
+		@media screen and (max-width: $mediumScreen) {
+			color: rgb(80,162,70);
+			@include center;
+			font-weight: bold;
+			margin: 0;
+		}
+	}
+	.section-header {
+		@extend .honda-headers;
+		@media screen and (max-width: $mediumScreen) {
+			font-size: 6vw;
+		}
+
+	}
+	.section-sub-header {
+		@extend .honda-headers;
+		@media screen and (max-width: $mediumScreen) {
+			font-size: 3.5vw;
+		}
+	}
+	.package-container {
+		@media screen and (max-width: $mediumScreen){
+			padding-bottom: 15vh;
+			width: 100vw;
+		}
+	}
+	.package-button {
+		@media screen and (max-width: $mediumScreen) {
+			width: 20%;
+			float: right;
+			height: 10vw;
+		}
+	}
+}
+
+/* Next Steps Section Styling */
+/* Spacing Specifications */
+.next-steps {
+	background-color: rgb(89,89,89);
+	padding: 100px 10% 50px 10%;
+	width: 80%;
+	@media screen and (max-width: $mediumScreen) {
+		padding: 5vh 5%;
+		width: 90%;
+	}
+	a {
+		@media screen and (max-width: $mediumScreen) {
+			font-style: none;
+			text-decoration: none;
+		}
+	}
+}
+#getting-started {
+	@include displayInline;
+	width: 61%;
+	padding-right: 5%;
+	padding-bottom: 75px;
+	border-right: 2px solid rgb(60,60,60);
+	@media screen and (max-width: $mediumScreen) {
+		border: none;
+		width: 100%;
+	}
+	.desktop-intro {
+		@media screen and (max-width: $mediumScreen) {
+			@include displayNone;
+		}
+	}
+}
+.mobile-intro {
+	@media screen and (max-width: $mediumScreen) {
+		@include displayBlock;
+		@include center;
+		line-height: 1;
+		margin-bottom: 8vh;
+	}
+	h4 {
+		@media screen and (max-width: $mediumScreen) {
+			font-size: 5vw;
+			color: $white;
+			margin: 0;
+		}
+	}
+	p {
+		@media screen and (max-width: $mediumScreen) {
+			font-size: 4vw;
+			margin: .5rem 0 1rem 0;
+		}
+	}
+}
+#contact {
+	@include displayInline;
+	width: 28%;
+	padding-left: 5%;
+	vertical-align: top;
+	@media screen and (max-width: $mediumScreen) {
+		@include displayNone;
+	}
+}
+
+
+// Styling of Chat App
+.chatWindow {
+	position: fixed;
+	bottom: 2.5vw;
+	right: 2.5vw;
+	width: 25vw;
+	max-width: 250px;
+	min-width: 150px;
+	z-index: 999;
+	background-color: $white;
+	transition-duration: .15s;
+	backface-visibility: hidden;
+}
+.un-opened {
+	@extend .chatWindow;
+	height: 25vw;
+	max-height: 250px;
+	min-height: 150px;
+	border: $flamingo 2px solid;
+	border-radius: 50%;
+	box-shadow: 0 0 20px $black;
+	#conversation, #msgInput, #sendMsgButton {
+		display: none;
+	}
+}
+.open {
+	@extend .chatWindow;
+	height: 40vw;
+	width: 30vw;
+	max-height: 400px;
+	min-height: 240px;
+	max-width: 300px;
+	min-width: 180px;
+	border: $flamingo 2px solid;
+	border-radius: 10px;
+	box-shadow: 0 0 20px $black;
+}
+#welcome-text {
+	height: 50%;
+	padding: 20% 10% 0 10%;
+	text-align: center;
+	h4 {
+		font-size: calc(12px + 1.5vw);
+	}
+}
+.open {
+	#welcome-text {
+		height: calc(20px + 3vw);
+		margin: 1vw 13%;
+		padding: 0;
+		border-bottom: $tundora 1px solid;
+		h4 {
+			font-size: calc(8px + 1vw);
+			margin: 0;
+		}
+	}
+	#conversation {
+		display: block;
+		height: calc(90% - 20px - 5.5vw);
+		width: 90%;
+		margin: 0 5% .5vw 5%;
+		overflow: auto;
+	}
+}
+.un-opened.hasBeenOpened {
+	#welcome-text{
+		padding-top: 10%;
+	}
+}
+#newMsg {
+	width: calc(100% - 1rem);
+	position: absolute;
+	bottom: .5rem;;
+	margin: 0 .5rem;
+	display: block;
+}
+#msgInput {
+	overflow: hidden;
+	background-color: white;
+	border: $flamingo 1px solid;
+	border-radius: 25px;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 65%;
+	color: $codGray;
+	&:focus {
+		outline: none;
+	}
+}
+.msgContainer {
+	width: 100%;
+	margin: .25rem 0;
+	vertical-align: none;
+	.user, .msg, .messageText {
+		display: inline-block;
+		height: auto;
+		font-size: .85rem;
+	}
+	.messageText {
+		margin: 0;
+	}
+	.user, .msg {
+		margin: .25rem 0;
+	}
+	.user {
+		width: 2rem;
+	}
+	.msg {
+		width: calc(100% - 2.25rem);
+		padding-left: .25rem;
+		float: right;
+	}
+	.timeStamp {
+		display: block;
+		width: 100%;
+		text-align: right;
+		height: auto;
+		margin: 0;
+		clear: both;
+		font-size: .65rem;
+	}
+}
+
+// Translate functions for inertia movement on chat window
+.translateXRight {
+	transform: translateX(.5rem);
+}
+.translateXLeft {
+	transform: translateX(-.5rem);
+}
+.translateYUp {
+	transform: translateY(-.5rem);
+}
+.translateYDown {
+	transform: translateY(.5rem);
+}
+
+
+
+// Default hiding for Desktop verson of website
+.honda-packages-mobile, .mobile-intro, .mobile-footer {
+	@include displayNone;
+	@media screen and (max-width: $mediumScreen) {
+		@include displayBlock;
+	}
+}
+
+.honda-packages {
+	@media screen and (max-width: $mediumScreen) {
+		@include displayNone;
+	}
+}
+

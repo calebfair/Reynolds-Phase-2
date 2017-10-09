@@ -1,0 +1,49 @@
+/* General Styling */
+body {
+	margin: 0;
+}
+// General Formatting
+p, h1, h2, h3, h4, h5 {
+	font-family: 'Lato', sans-serif;
+	font-weight: normal;
+	color: $codGray;
+}
+
+// Classes for accordion -- to signal which section is open
+.active {
+}
+.inactive {
+}
+
+
+// General Section Header Formatting
+.section-header {
+	font-family: 'Slabo 27px', serif;
+	@include center;
+}
+
+// General Positioning Classes
+.center {
+	@include center;
+}
+.float-right {
+	float: right;
+}
+.float-left {
+	float: left;
+}
+.float-right, .float-left {
+	@media screen and (max-width: $mediumScreen) {
+		float: none;
+	}
+}
+
+// General Text Formatting
+.bold {
+	font-weight: bold;
+	color: $black;
+}
+.italics {
+	font-style: italic;
+	font-size: 12px;
+}

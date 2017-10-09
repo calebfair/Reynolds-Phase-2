@@ -1,0 +1,49 @@
+
+
+// Image resize for Mobile Screen sizes
+.mobile-image-resize {	
+	@media only screen and (max-width: $smallScreen) {
+		height:40px;
+	}
+}
+
+/* Add Logos as background images for header and footer */
+#honda-logo-header {
+	@include imageCentered('../Images/honda-logo.png');
+	@extend .mobile-image-resize;
+}
+#honda-logo-footer {
+	@include imageCentered('../Images/honda-logo-foot-desktop.png');
+	@media screen and (max-width: $mediumScreen) {
+		@include imageCentered('../Images/honda-logo-foot.png');
+	}
+}
+#naked-lime-logo-header {
+	@include imageCentered('../Images/nakedlime-logo-desktop.png');
+	@media screen and (max-width: $mediumScreen) {
+		@include imageCentered('../Images/nakedlime-logo-header.png');
+	}
+	@extend .mobile-image-resize;
+}
+#naked-lime-logo-footer {
+	@include imageCentered('../Images/nakedlime-logo-white.png');
+	@media screen and (max-width: $mediumScreen) {
+		@include imageCentered('../Images/nakedlime-logo-white.png');
+	}
+}
+#social-media-logo {
+	@include imageCentered('../Images/social-logo.png');
+	@extend .mobile-image-resize;
+}
+
+
+// Honda Packages Background Image
+.honda-packages {
+	@include imageCentered('../Images/green_pattern_fill.jpg');
+}
+
+/* Check-mark background images for Table */
+.has-check {
+	@include imageCentered('../Images/check.png');
+}
+

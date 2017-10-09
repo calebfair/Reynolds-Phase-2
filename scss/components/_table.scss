@@ -1,0 +1,82 @@
+
+/* Table formatting */
+table {
+	border-collapse: collapse;
+	width: 90%;
+	margin: 0 5%;
+	margin-bottom: 2rem;
+	transition: max-height 1s;
+	@media screen and (max-width: $mediumScreen) {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+table .header {
+	font-size: $small;
+	height: 2.5rem;
+}
+.first-col {
+	min-width: 20rem;
+}
+#column-2, #column-3, #column-4, #column-5 {
+	width: 15%;
+}
+td:first-child {
+	padding: 0 2rem;
+}
+/* Table Background Coloring */
+tr:nth-child(odd) {
+	background-color: $primrose;
+} 
+tr:nth-child(even) {
+	background-color: rgb(255,255,230);
+}
+tr:nth-child(1), tr:nth-child(2), tr .first-col {
+	background-color: white;
+}
+/* Table border formatting */
+th.not-empty {
+	border: 2px solid $primrose;
+}
+.row-1 .header {
+	border-top: 4px solid $tundora;
+}
+#column-3 {
+	border-right: 4px solid $tundora;
+}
+#column-2, #column-4 {
+	border-right: 2px solid white;
+}
+tr:nth-child(n+3) {
+	border-bottom: 1px solid rgb(200,200,200);
+}
+
+// Mobile table formatting
+.table-row:nth-child(odd) {
+	@extend tr:nth-child(odd);
+}
+.table-row:nth-child(even) {
+	@extend tr:nth-child(even);
+}
+.table-row {
+	p, ul {
+		width: 90vw;
+	}
+}
+.table-row {
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 6vw;
+	border-bottom: 1px solid rgb(200,200,200);
+}
+.row-superscript {
+	height: 7vw;
+}
+.has-more-info {
+	height: 10vw;
+}
+.two-line-header {
+	height: 10vw;
+}

@@ -1,0 +1,19 @@
+@mixin center {
+	text-align: center;
+}
+
+@mixin imageCentered($imagePath) {
+	background: url($imagePath) center center no-repeat;
+}
+
+@mixin displayBlock {
+	display: block;
+}
+
+@mixin displayNone {
+	display: none;
+}
+
+@mixin displayInline {
+	display: inline-block;
+}

@@ -1,0 +1,127 @@
+.button {
+	background-color: $flamingo;
+}
+
+.option-button {
+	@include displayInline;
+	width: 20%;
+	margin: 0 1%;
+	border: 2px solid $white;
+	border-radius: 1px;
+	padding: 5px .5%;
+}
+
+input[type="submit"] {
+	padding: 15px 0;
+	width: 20%;
+	margin: 25px 40% 0 40%;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: 'Slabo 27px', serif;
+	@media screen and (max-width: $mediumScreen) {
+		font-size: 3vw;
+	}
+	@media only screen and (max-width: $smallScreen) {
+		width: 30%;
+		margin: 25px 35% 0 35%;
+		font-size: 5vw;
+	}
+}
+
+
+.mobile-guider {
+	@include displayNone;
+	@media screen and (max-width: $mediumScreen) {
+		@include displayBlock;
+		clear: both;
+		@include center;
+		position: absolute;
+		margin-bottom: -1vh;
+		bottom: 0;
+		width: 100%;
+	}
+	.button {
+		@media screen and (max-width: $mediumScreen) {
+			@include displayInline;
+			@include center;
+			padding: 1vw;
+			padding-bottom: 4vw;
+			border-radius: 3px;
+			font-size: 3vw;
+			color: $white;
+			margin: 0;
+		}
+		@media only screen and (max-width: $smallScreen) {
+			font-size: 4vw;
+			padding: 2vw;
+			padding-bottom: 4vw;
+		}
+	}
+}
+
+.package-button {
+	@media screen and (max-width: $mediumScreen) {
+		@include displayInline;
+	}
+	h1 {
+		@media screen and (max-width: $mediumScreen) {
+			color: $white;
+			margin: auto;
+			font-size: 3rem;
+			@include center;
+			line-height: 10vw;
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+
+
+#sendMsgButton {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	padding: .25rem 1rem;
+	margin-left: .25rem;
+	border-radius: 15px;
+	p {
+		display: inline-block;
+		margin: 0;
+		color: white;
+		font-size: 16px;
+		pointer-events: none;
+	}
+	float: right;
+	&:active {
+		box-shadow: 0 0 10px $black;
+	}
+}
+#exit {
+	display: inline-block;
+	position: absolute;
+	z-index: 999;
+	top: 3px;
+	right: 3px;
+	height: 1rem;
+	width: 1em;
+	margin: 0;
+	padding: 0;
+	background-color: $flamingo;
+	border-radius: 50%;
+	box-shadow: 0 0 10px $black;
+	text-align: center;
+	#exitTxt {
+		margin: 0;
+		padding-left: 1px;
+		font-size: .75rem;
+		line-height: 1rem;
+		pointer-events: none;
+		text-align: center;
+		color: white;
+	}
+}
+.un-opened #exit {
+	display: none;
+}
+
+
