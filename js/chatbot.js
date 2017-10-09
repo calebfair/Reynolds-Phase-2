@@ -99,23 +99,9 @@ window.onload = function() {
 	];
 	function botResponse() {
 		var choice = Math.random();
-		choice = Math.ceil(choice*5);
+		choice = (Math.ceil(choice*5)) -1;
 		console.log('choosing a response');
-		switch (choice) {
-			case 1: return responses[0];
-			case 2: return responses[1];
-			case 3: return responses[2];
-			case 4: return responses[3];
-			case 5: return responses[4];
-			default: return 'What is the problem you would like help with?';
-		}
-		/*
-			A more elegant solution here (instead of a switch)
-			may be:
-
-			choice = ( Math.ceil(choice*5) ) -1;
-			return responses[choice];
-		*/
+		return responses[choice];
 	}
 
 	function newMessage(content, sender) {
@@ -138,10 +124,7 @@ window.onload = function() {
 		timeStamp.textContent = createTimeStamp();
 		msgContainer.appendChild(timeStamp);
 		conversation.appendChild(msgContainer);
-		/*
-			Good on using the scrollTop instead of making the
-			user scroll to the bottom on each send.
-		*/
+
 		conversation.scrollTop = conversation.scrollHeight;
 		if (sender === 'you') {
 			clearTimeout(timer);
@@ -149,15 +132,22 @@ window.onload = function() {
 		}
 	}
 
+	input.onkeydown = function() {
+		var key = event.keyCode || event.which;
+		if (key === 13) {
+			if (input.value) {
+				newMessage(input.value, 'you');
+				input.value = '';
+			}
+		}
+	}
+	
+
 	chatWindow.onclick = function () {
 		var e = event.target;
 		if (e === exit) {
 			minimizeChatWindow();
 		}
-		/*
-			Pressing <Enter> doesn't send the message, which is kind of
-			unintuitive. 
-		*/
 		else if (e === send) {
 			if (input.value) {
 				newMessage(input.value, 'you');

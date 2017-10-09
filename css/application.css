@@ -1,3 +1,10 @@
+/*
+
+	Good use of sass partials!
+
+	Good to have a global/application import file.
+
+*/
 /* General Styling */
 body {
   margin: 0; }
@@ -318,7 +325,9 @@ footer {
   min-height: 150px;
   border: #f15c5c 2px solid;
   border-radius: 50%;
-  box-shadow: 0 0 20px black; }
+  box-shadow: 0 0 20px black;
+  cursor: pointer;
+  overflow: none; }
   .un-opened #conversation, .un-opened #msgInput, .un-opened #sendMsgButton {
     display: none; }
 
