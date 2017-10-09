@@ -1,3 +1,10 @@
+/*
+
+	Accordian is pretty. Glad to see all other packages
+	close when another one is selected to open.
+
+*/
+
 const timing = 400;
 
 // Used to determine which sections are visible

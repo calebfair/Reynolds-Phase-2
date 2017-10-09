@@ -1,3 +1,15 @@
+/*
+
+Would recomment adding CSS to make cursor use pointer when
+hovering over "Is there anything else I can do" bubble so
+it looks clickable.
+
+Good variable names!
+
+Code is readable and functions are used appropriately.
+
+*/
+
 const timeForCheckout = 50;
 var directionX = 'none';
 var directionY = 'none';
@@ -5,6 +17,13 @@ var currentDirectionX = 'none';
 var currentDirectionY = 'none';
 
 window.onload = function() {
+	/*
+		One option is to append elemnts using js, but we
+		could also already have the html in the dom with
+		a css wraper property of display:none, then
+		change that single wrapper element to display:block
+		onclick.
+	*/
 	const chatWindow = document.createElement('div');
 	const welcome = document.createElement('div');
 	const welcomeText = document.createElement('h4');
@@ -90,6 +109,13 @@ window.onload = function() {
 			case 5: return responses[4];
 			default: return 'What is the problem you would like help with?';
 		}
+		/*
+			A more elegant solution here (instead of a switch)
+			may be:
+
+			choice = ( Math.ceil(choice*5) ) -1;
+			return responses[choice];
+		*/
 	}
 
 	function newMessage(content, sender) {
@@ -112,6 +138,10 @@ window.onload = function() {
 		timeStamp.textContent = createTimeStamp();
 		msgContainer.appendChild(timeStamp);
 		conversation.appendChild(msgContainer);
+		/*
+			Good on using the scrollTop instead of making the
+			user scroll to the bottom on each send.
+		*/
 		conversation.scrollTop = conversation.scrollHeight;
 		if (sender === 'you') {
 			clearTimeout(timer);
@@ -124,6 +154,10 @@ window.onload = function() {
 		if (e === exit) {
 			minimizeChatWindow();
 		}
+		/*
+			Pressing <Enter> doesn't send the message, which is kind of
+			unintuitive. 
+		*/
 		else if (e === send) {
 			if (input.value) {
 				newMessage(input.value, 'you');
@@ -149,6 +183,10 @@ window.onload = function() {
 	var newWindowX = window.pageXOffset;
 	var newWindowY = window.pageYOffset;
 	var timer = null;
+
+	/*
+		I like the movement.
+	*/
 
 
 	function checkDirection(currentDirectionX, currentDirectionY) {
