@@ -1,15 +1,3 @@
-/*
-
-Would recomment adding CSS to make cursor use pointer when
-hovering over "Is there anything else I can do" bubble so
-it looks clickable.
-
-Good variable names!
-
-Code is readable and functions are used appropriately.
-
-*/
-
 const timeForCheckout = 50;
 var directionX = 'none';
 var directionY = 'none';
