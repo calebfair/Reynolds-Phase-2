@@ -1,10 +1,3 @@
-/*
-
-	Accordian is pretty. Glad to see all other packages
-	close when another one is selected to open.
-
-*/
-
 const timing = 400;
 
 // Used to determine which sections are visible
@@ -29,15 +22,6 @@ function hideChildren(rows, target) {
 	}
 	swapClasses(target, 'active', 'inactive');
 };
-/* Slide up all rows at same time
-function hideChildren(rows, target) {
-	for ( let i = 0; i < rows.length; i ++) {
-		var row = $(rows[i]);
-		row.slideUp();
-	}
-	swapClasses(target, 'active', 'inactive');
-};
-*/
 
 // Slide down package-headers first and then sub rows
 function revealChildren (rows, target) {
@@ -55,15 +39,6 @@ function revealChildren (rows, target) {
 	}
 	swapClasses(target, 'inactive', 'active');
 };
-/* Slide down all rows at same time
-function revealChildren (rows, target) {
-	for ( let i = 0; i < rows.length; i ++) {
-		var row = $(rows[i]);
-		row.slideDown('slow');
-	}
-	swapClasses(target, 'inactive', 'active');
-};
-*/
 
 function checkAll () {
 	const packages = $(".package-table");
